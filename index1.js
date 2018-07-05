@@ -11,6 +11,16 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.post("/mainService", function(req, res){
+    res.json({
+        speech: "hi from webhook",
+        displayText =" hi from webhook",
+        source:'webhook'
+    })
+
+
+})
+
 app.post('/', function(req, res) {
     request.get({
           url: 'https://10to8.com/api/booking/v2/organisation/',
